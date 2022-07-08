@@ -31,4 +31,24 @@ itemList[activeImg].classList.add('show');
 // debug: check if itemList is an array (if done correctly, it will be an array with 5 elements within) and if the .show class is given to the first <div> only.
 console.log(itemList);
 
-// click on arrows event
+
+
+
+
+// click on arrow_next event
+const next = document.querySelector('.arrow_next');
+next.addEventListener('click',
+function() {
+    itemList[activeImg].classList.remove('show');
+    activeImg++;
+    itemList[activeImg].classList.add('show');
+})
+
+// click on arrow_previous event
+const previous = document.querySelector('.arrow_previous');
+previous.addEventListener('click',
+function() {
+    itemList[activeImg].classList.remove('show');
+    activeImg--;
+    itemList[activeImg].classList.add('show');
+})
