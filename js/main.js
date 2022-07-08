@@ -10,7 +10,7 @@ const imgArray = [
 // create variabile to be used in the for loop to tell where the created <div> should be put in the html file.
 const itemsDom = document.querySelector('.items');
 
-// for loop to dynamically create <div .item> (i will not see them in html because they will not have the .show class).
+// create a for loop to dynamically create <div .item> (i will not see them in html because they will not have the .show class).
 for (i=0; i<imgArray.length; i++) {
     itemsDom.innerHTML += `<div class="item">
                             <img class="img_slide" src="${imgArray[i]}">
@@ -19,3 +19,10 @@ for (i=0; i<imgArray.length; i++) {
     console.log(itemsDom);
 }
 
+// create variable to add to the first <div .item>[i] the .show class
+let activeImg = 0;
+const itemList = document.getElementsByClassName('item');
+itemList[activeImg].classList.add('show');
+
+// debug: check if itemList is an array (if done correctly, it will be an array with 5 elements within) and if the .show class is given to the first <div> only.
+console.log(itemList);
