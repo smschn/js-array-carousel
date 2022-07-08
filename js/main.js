@@ -19,9 +19,13 @@ for (i=0; i<imgArray.length; i++) {
     console.log(itemsDom);
 }
 
-// create variable to add to the first <div .item>[i] the .show class
+// create a variable to specify which item inside the imgArray will have the .show class.
 let activeImg = 0;
+
+// create a variable which refers to every .item (this is an array).
 const itemList = document.getElementsByClassName('item');
+
+// being an array, we can tell to the first item in itemList to have the class .show
 itemList[activeImg].classList.add('show');
 
 // debug: check if itemList is an array (if done correctly, it will be an array with 5 elements within) and if the .show class is given to the first <div> only.
