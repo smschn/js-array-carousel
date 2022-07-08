@@ -40,19 +40,15 @@ const next = document.querySelector('.arrow_next');
 next.addEventListener('click',
 function() {
 
-     if (activeImg == (imgArray.length-1)) {
+     if (activeImg == imgArray.length-1) {
         itemList[imgArray.length-1].classList.remove('show');
         activeImg = 0;
         itemList[activeImg].classList.add('show');
-    } /* else if (activeImg < (imgArray.length-1)) {
+    } else {
         itemList[activeImg].classList.remove('show');
         activeImg++;
         itemList[activeImg].classList.add('show');
-    } */
-
-    itemList[activeImg].classList.remove('show');
-    activeImg++;
-    itemList[activeImg].classList.add('show');
+    }
 
 })
 
@@ -62,7 +58,6 @@ previous.addEventListener('click',
 function() {
 
     if (activeImg == 0) {
-
         itemList[0].classList.remove('show');
         activeImg = (imgArray.length-1);
         itemList[(imgArray.length-1)].classList.add('show');
