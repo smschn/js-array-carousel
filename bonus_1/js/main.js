@@ -40,15 +40,19 @@ const next = document.querySelector('.arrow_next');
 next.addEventListener('click',
 function() {
 
-     if (activeImg >= (imgArray.length-1)) {
+     if (activeImg == (imgArray.length-1)) {
         itemList[imgArray.length-1].classList.remove('show');
         activeImg = 0;
         itemList[activeImg].classList.add('show');
-    } else if (activeImg < 4) {
+    } /* else if (activeImg < (imgArray.length-1)) {
         itemList[activeImg].classList.remove('show');
         activeImg++;
         itemList[activeImg].classList.add('show');
-    }
+    } */
+
+    itemList[activeImg].classList.remove('show');
+    activeImg++;
+    itemList[activeImg].classList.add('show');
 
 })
 
@@ -56,7 +60,16 @@ function() {
 const previous = document.querySelector('.arrow_previous');
 previous.addEventListener('click',
 function() {
-    itemList[activeImg].classList.remove('show');
-    activeImg--;
-    itemList[activeImg].classList.add('show');
+
+    if (activeImg == 0) {
+
+        itemList[0].classList.remove('show');
+        activeImg = 4;
+        itemList[4].classList.add('show');
+    } else if (activeImg < 5 && activeImg > 0) {
+        itemList[activeImg].classList.remove('show');
+        activeImg--;
+        itemList[activeImg].classList.add('show');
+    }
+    
 })
