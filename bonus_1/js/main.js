@@ -64,8 +64,8 @@ function() {
     if (activeImg == 0) {
 
         itemList[0].classList.remove('show');
-        activeImg = 4;
-        itemList[4].classList.add('show');
+        activeImg = (imgArray.length-1);
+        itemList[(imgArray.length-1)].classList.add('show');
     } else if (activeImg < 5 && activeImg > 0) {
         itemList[activeImg].classList.remove('show');
         activeImg--;
