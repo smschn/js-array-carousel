@@ -16,8 +16,44 @@
     transform: translate(-50%, -50%);
 }
 
-.items {
+.item {
     height: 50vh;
     width: 50vw;
+    display: none;
 }
 
+.img_slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.show {
+    display: block;
+}
+
+.arrow_up {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.5);
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+}
+
+.arrow_down {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.5);
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+}
