@@ -39,9 +39,17 @@ console.log(itemList);
 const next = document.querySelector('.arrow_next');
 next.addEventListener('click',
 function() {
-    itemList[activeImg].classList.remove('show');
-    activeImg++;
-    itemList[activeImg].classList.add('show');
+
+     if (activeImg >= (imgArray.length-1)) {
+        itemList[imgArray.length-1].classList.remove('show');
+        activeImg = 0;
+        itemList[activeImg].classList.add('show');
+    } else if (activeImg < 4) {
+        itemList[activeImg].classList.remove('show');
+        activeImg++;
+        itemList[activeImg].classList.add('show');
+    }
+
 })
 
 // click on arrow_previous event
