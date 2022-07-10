@@ -36,26 +36,42 @@ console.log(itemList);
 
 
 
-const imgThumbnailDom = document.getElementsByClassName('t_img');
-console.log(imgThumbnailDom);
+
+
+// following is mostly related to bonus_2
+const thumbnailContainerDom = document.querySelector('.thumbnail_container'); // bonus_2
+
+// bonus_2
+for (i=0; i<imgArray.length; i++) {
+    thumbnailContainerDom.innerHTML += `<div class="t_img">
+                                        <img src="${imgArray[i]}">
+                                        </div>`;
+}
+
+//bonus_2
+const activeImgThumbnailDom = document.getElementsByClassName('t_img');
+console.log(activeImgThumbnailDom); // to check if we have an array with all the 5 <div .t_img> created.
+
+activeImgThumbnailDom[activeImg].classList.add('active');
+console.log(activeImgThumbnailDom); // to check if the first <div .t_img> has the class .active.
 
 // click on arrow_next event
 const next = document.querySelector('.arrow_next');
 next.addEventListener('click',
 function() {
 
-     if (activeImg == imgArray.length-1) {
-        itemList[imgArray.length-1].classList.remove('show');
-        imgThumbnailDom[activeImg].classList.remove('active'); // bonus_2 part
+     if (activeImg == (imgArray.length-1)) {
+        itemList[activeImg].classList.remove('show');
+        activeImgThumbnailDom[activeImg].classList.remove('active'); // bonus_2 part
         activeImg = 0;
         itemList[activeImg].classList.add('show');
-        imgThumbnailDom[activeImg].classList.add('active'); // bonus_2 part
+        activeImgThumbnailDom[activeImg].classList.add('active'); // bonus_2 part
     } else {
         itemList[activeImg].classList.remove('show');
-        imgThumbnailDom[activeImg].classList.remove('active'); // bonus_2 part
+        activeImgThumbnailDom[activeImg].classList.remove('active'); // bonus_2 part
         activeImg++;
         itemList[activeImg].classList.add('show');
-        imgThumbnailDom[activeImg].classList.add('active'); // bonus_2 part
+        activeImgThumbnailDom[activeImg].classList.add('active'); // bonus_2 part
     }
 
 })
@@ -67,16 +83,16 @@ function() {
 
     if (activeImg == 0) {
         itemList[0].classList.remove('show');
-        imgThumbnailDom[activeImg].classList.remove('active'); // bonus_2 part
+        activeImgThumbnailDom[activeImg].classList.remove('active'); // bonus_2 part
         activeImg = (imgArray.length-1);
-        itemList[(imgArray.length-1)].classList.add('show');
-        imgThumbnailDom[activeImg].classList.add('active'); // bonus_2 part
-    } else if (activeImg < 5 && activeImg > 0) {
+        itemList[activeImg].classList.add('show');
+        activeImgThumbnailDom[activeImg].classList.add('active'); // bonus_2 part
+    } else {
         itemList[activeImg].classList.remove('show');
-        imgThumbnailDom[activeImg].classList.remove('active'); // bonus_2 part
+        activeImgThumbnailDom[activeImg].classList.remove('active'); // bonus_2 part
         activeImg--;
         itemList[activeImg].classList.add('show');
-        imgThumbnailDom[activeImg].classList.add('active'); // bonus_2 part
+        activeImgThumbnailDom[activeImg].classList.add('active'); // bonus_2 part
     }
     
 })
