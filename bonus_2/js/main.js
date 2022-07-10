@@ -31,10 +31,6 @@ itemList[activeImg].classList.add('show');
 // debug: check if itemList is an array (if done correctly, it will be an array with 5 elements within) and if the .show class is given to the first <div> only.
 console.log(itemList);
 
-
-
-
-
 // click on arrow_next event
 const next = document.querySelector('.arrow_next');
 next.addEventListener('click',
