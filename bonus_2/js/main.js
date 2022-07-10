@@ -31,6 +31,14 @@ itemList[activeImg].classList.add('show');
 // debug: check if itemList is an array (if done correctly, it will be an array with 5 elements within) and if the .show class is given to the first <div> only.
 console.log(itemList);
 
+
+
+
+
+
+const imgThumbnailDom = document.getElementsByClassName('t_img');
+console.log(imgThumbnailDom);
+
 // click on arrow_next event
 const next = document.querySelector('.arrow_next');
 next.addEventListener('click',
@@ -38,12 +46,16 @@ function() {
 
      if (activeImg == imgArray.length-1) {
         itemList[imgArray.length-1].classList.remove('show');
+        imgThumbnailDom[activeImg].classList.remove('active'); // bonus_2 part
         activeImg = 0;
         itemList[activeImg].classList.add('show');
+        imgThumbnailDom[activeImg].classList.add('active'); // bonus_2 part
     } else {
         itemList[activeImg].classList.remove('show');
+        imgThumbnailDom[activeImg].classList.remove('active'); // bonus_2 part
         activeImg++;
         itemList[activeImg].classList.add('show');
+        imgThumbnailDom[activeImg].classList.add('active'); // bonus_2 part
     }
 
 })
@@ -55,12 +67,16 @@ function() {
 
     if (activeImg == 0) {
         itemList[0].classList.remove('show');
+        imgThumbnailDom[activeImg].classList.remove('active'); // bonus_2 part
         activeImg = (imgArray.length-1);
         itemList[(imgArray.length-1)].classList.add('show');
+        imgThumbnailDom[activeImg].classList.add('active'); // bonus_2 part
     } else if (activeImg < 5 && activeImg > 0) {
         itemList[activeImg].classList.remove('show');
+        imgThumbnailDom[activeImg].classList.remove('active'); // bonus_2 part
         activeImg--;
         itemList[activeImg].classList.add('show');
+        imgThumbnailDom[activeImg].classList.add('active'); // bonus_2 part
     }
     
 })
